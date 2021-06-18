@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
 
-const http = require('http')
 
 app.get('/', (req, res) => {
-    res.send('/dist/index')
+    res.redirect('/index')
 })
 
 const port = process.env.PORT || 3000;
