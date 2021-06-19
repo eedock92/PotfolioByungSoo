@@ -1,9 +1,14 @@
 const express = require('express');
+const fs = require('fs');
 const app = express();
 
 
 app.get('/', (req, res) => {
-    res.render('./dist/index.html')
+    fs.readFile('index.html', function(err, data){
+        res.writeHead(200, {'Content-Type' : 'text/html ' });
+        res.end(data);
+    })
+    
 })
 
 const port = process.env.PORT || 3000;
