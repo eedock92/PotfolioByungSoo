@@ -3,7 +3,7 @@ const app = express();
 
 
 app.get('', (req, res) => {
-    res.sendFile('./dist/index.html')
+    res.sendFile(__filename + 'dist/index.html')
 })
 
 const port = process.env.PORT || 3000;
