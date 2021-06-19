@@ -4,11 +4,11 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-    fs.readFile('/dist/index.html', function(err, data){
-        res.writeHead(200, {'Content-Type' : 'text/html ' });
-        res.end(data);
-    })
-    
+    res.sendFile(__dirname + '/index.html');
+})
+
+app.get('/about', (req, res) => {
+    res.sendFile(__dirname + "/about.html");
 })
 
 const port = process.env.PORT || 3000;
